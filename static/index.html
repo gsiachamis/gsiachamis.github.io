@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+      <title> George Siachamis </title>
+      <meta author="Nikos Siachamis">
+      <meta description="self-introductive site">
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="./styles.css">
+      <link rel="shortcut icon" href="./images/favicon.ico" alt="favicon" type="image/x-icon"/>
+      <script src="./scripts.js"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+
+    <main>
+
+      <div class="main_background">
+
+        <div class="main_area">
+
+          <div class="fadeOutTop"></div>
+
+          <header class="header">
+
+            <img class="profile_image" src="./images/1547217445063.jpg" alt="profile image" width="200px" height="auto"/>
+            <h1 class="title"> George Siachamis </h1>
+            
+            <nav class="main_nav">
+              <ul class="nav_list">
+                <li>
+                  <a id="Bio" href="#Bio" class="tablinks">Bio</a>
+                </li>
+                <li>
+                  <a id="Education" href="#Education" class="tablinks">Education</a>
+                </li>
+                <li>
+                  <a id="Publications" href="./publications.html" class="tablinks">Publications</a>
+                </li>
+              </ul>
+            </nav>
+    
+          </header>
+    
+          <div class="flexbox">
+    
+            <div class="contact">
+              <a id="linkedin" class="contact_links" href="https://www.linkedin.com/in/georgios-siachamis-76415796/" target="_blank"><img src="./images/clipart1156929.png" alt="linkedIn_icon" width="35" height="auto"></a>
+              <a id="github" class="contact_links" href="https://github.com/jorgeSia" target="_blank"><img src="./images/52-520535_free-files-github-github-icon-png-white.png" alt="github_icon" width="35" height="auto"></a>            
+              <a id="mail" class="contact_links"><img id="mail_icon" src="./images/PngItem_5238950.png" alt="mail_icon" width="35" height="auto">
+                  <div><input class="tooltiptext" type="text" value="georgedrfsia@gmail.com" id="mail_text" readonly></div>
+              </a>
+            </div>
+
+            <section class="content" id="Bio_tab">
+                <p class="content_text">I am a PhD Candidate at the Web Information Systems group of the Faculty of 
+                  Engineering, Mathematics and Computer Science at Delft University of Technology. 
+                  I am supervised by Asterios Katsifodimos and Christoph Lofi. My research is 
+                  focused on Data Integration, and specifically Schema Matching, while I have also 
+                  worked on spatial data management.
+                  I hold a Master of Philosophy (MPhil) in Computer Science from HKUST, where I 
+                  was supervised by Prof. Dimitris Papadias. Prior to that, I obtained my 5-year 
+                  Diploma in Electrical and Computer Engineering from National Technical 
+                  University of Athens.
+                </p>
+            </section>
+    
+            <section class="content" id="Education_tab">
+              <p class="content_text">Web Information Systems Group, Department of Software Technology, 
+                Faculty of Electrical Engineering, Mathematics and Computer Science, TU Delft</p>
+            </section>
+    
+          </div>
+
+          <div class="fadeOutBot"></div>
+          
+        </div>
+
+        <div id="news">
+
+          <article class="news">
+  
+            <h3> News </h3>
+    
+            <div id="newsCarousel" class="carousel slide" data-ride="carousel">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#newsCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#newsCarousel" data-slide-to="1"></li>
+                <li data-target="#newsCarousel" data-slide-to="2"></li>
+              </ol>
+          
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner">
+                <div class="item active">
+                    <h4> Denmark conference </h4>
+                    <p>
+                      bla bla bla
+                    </p>
+                </div>
+          
+                <div class="item">
+                    <h4> Denmark conference </h4>
+                    <p>
+                      bla bla bla
+                    </p>
+                </div>
+              
+                <div class="item">
+                    <h4> Denmark conference </h4>
+                    <p>
+                      bla bla bla
+                    </p>
+                </div>
+              </div>
+          
+              <!-- Left and right controls -->
+              <a class="left carousel-control" href="#newsCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#newsCarousel" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+    
+          </article>  
+
+        </div>
+
+      </div>
+      
+    </main>
+
+    <footer class="main_footer">
+      © Copyright 2021 
+      <a class="reference" href="https://itsnek.github.io/" target="_blank"> Nikos Siachamis </a>
+      . Hosted by
+      <a class="reference" href="https://pages.github.com/" target="_blank"> GitHub Pages </a>
+    </footer>
+
+  </body>
+
+</html>
