@@ -39,15 +39,9 @@ main{
     z-index: 0;
     overflow-y: hidden;
     padding: 20px;
-<<<<<<< HEAD
     margin: 40px;
     margin-left: 10%;
     margin-right: 10%;
-=======
-    margin: 30px;
-    margin-left: 5%;
-    margin-right: 5%;
->>>>>>> c88ad75c65bdbc5399c48b06f0fd172fbc8d6550
     border-radius: 15px;
     box-shadow: 0px 0px 15px 0px black;
 }
