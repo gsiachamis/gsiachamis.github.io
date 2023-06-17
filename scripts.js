@@ -86,3 +86,9 @@ function copy_mail(){
     alert("Mail copied successfully.")
     console.log("copied!");
 }
+
+// function carousel(){
+//     carousel_item = document.getElementById("newsCarousel");
+//     // carousel_items = document.getElementsByClassName("item");
+//     carousel_item.interval("10000");
+// }
