@@ -32,7 +32,7 @@ window.addEventListener('load',function(){
 
     document.getElementById("mail_text").addEventListener('click', () => copy_mail());
 
-});
+})
 
 function showContent(tab){
     let tablink1 = document.getElementById("Bio");
@@ -86,9 +86,3 @@ function copy_mail(){
     alert("Mail copied successfully.")
     console.log("copied!");
 }
-
-// function carousel(){
-//     carousel_item = document.getElementById("newsCarousel");
-//     // carousel_items = document.getElementsByClassName("item");
-//     carousel_item.interval("10000");
-// }
