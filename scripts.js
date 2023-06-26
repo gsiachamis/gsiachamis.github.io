@@ -32,7 +32,7 @@ window.addEventListener('load',function(){
 
     document.getElementById("mail_text").addEventListener('click', () => copy_mail());
 
-});
+})
 
 function showContent(tab){
     let tablink1 = document.getElementById("Bio");
