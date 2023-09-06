@@ -184,15 +184,17 @@ html{
 
 .news{
     position: relative;
-    bottom: 10px;
+    bottom: 20px;
     overflow-wrap:break-word;
+    box-sizing:border-box;
+    height: 100px;
     /* width: calc(100% - 20px); */
     margin: 0;
 }
 
 #news{
     /* width:  calc(100% - 20px); */
-    box-sizing: content-box;
+    box-sizing:border-box;
     margin: 0;
 }
 
@@ -325,13 +327,17 @@ h1{
         font-size: 5vw;
     }
 
-    .carousel-inner > .item > h4{
+    .carousel-inner > .item {
+        height: 80px;
+    }
+
+    /* .carousel-inner > .item > h4{
         font-size: 4vw;
     }
 
     .carousel-inner > .item > p{
         font-size: 3vw;
-    }
+    } */
 
     .header{
         margin-bottom: 40px;
@@ -519,7 +525,7 @@ h1{
         border: 1px solid rgba(192, 192, 192, 0.7);
         float: none;
         margin-left: 0;
-        border-radius: 50%;
+        border-radius: 20%;
         box-shadow: 0px 0px 10px 0px black;
     }
 
