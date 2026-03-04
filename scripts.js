@@ -1,88 +1,75 @@
-window.addEventListener('load',function(){
+window.addEventListener('DOMContentLoaded', () => {
+  const navLinks = Array.from(document.querySelectorAll('.main-nav a[href^="#"]'));
+  const sections = navLinks
+    .map((link) => {
+      const id = link.getAttribute('href')?.slice(1);
+      return id ? document.getElementById(id) : null;
+    })
+    .filter(Boolean);
 
-    let tab1 = document.getElementById("Bio");
-    let tab2 = document.getElementById("Education");
-    let tab3 = document.getElementById("Publications");
+  navLinks.forEach((link) => {
+    link.addEventListener('click', (event) => {
+      const href = link.getAttribute('href');
+      if (!href || !href.startsWith('#')) {
+        return;
+      }
 
-    let url = window.location.hash;
+      const target = document.querySelector(href);
+      if (!target) {
+        return;
+      }
 
-    if(url === "#Bio"){
-        showContent("Bio");
-    }else if(url === "#Education"){
-        showContent("Education");
-    }else if(url === "#Publications"){
-        showContent("Publications");
-    }else{
-        showContent("Bio");
-    }
+      event.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      history.replaceState(null, '', href);
+    });
+  });
 
-    tab1.addEventListener('focus', () => showContent("Bio"));
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
 
-    tab2.addEventListener('focus', () => showContent("Education"));
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach((link) => {
+          link.classList.toggle('is-active', link.getAttribute('href') === `#${id}`);
+        });
+      });
+    },
+    { threshold: 0.45, rootMargin: '-10% 0px -45% 0px' }
+  );
 
-    tab3.addEventListener('focus', () => showContent("Publications"));
+  sections.forEach((section) => observer.observe(section));
 
-    tab1.addEventListener('click', () => showContent("Bio"));
-    
-    tab2.addEventListener('click', () => showContent("Education"));
+  const copyButton = document.getElementById('copy-email');
+  const copyStatus = document.getElementById('copy-status');
 
-    tab3.addEventListener('click', () => showContent("Publications"));
+  if (copyButton && copyStatus) {
+    copyButton.addEventListener('click', async () => {
+      const email = copyButton.getAttribute('data-email') || 'georgedrfsia@gmail.com';
+      if (!email) {
+        return;
+      }
 
-    document.getElementById("mail_icon").addEventListener('click', () => copy_mail());
+      try {
+        await navigator.clipboard.writeText(email);
+        copyStatus.textContent = 'Email copied.';
+      } catch (_error) {
+        // Fallback for older browsers.
+        const hiddenInput = document.createElement('input');
+        hiddenInput.value = email;
+        document.body.appendChild(hiddenInput);
+        hiddenInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(hiddenInput);
+        copyStatus.textContent = 'Email copied.';
+      }
 
-    document.getElementById("mail_text").addEventListener('click', () => copy_mail());
-
-})
-
-function showContent(tab){
-    let tablink1 = document.getElementById("Bio");
-    let tablink2 = document.getElementById("Education");
-    let tablink3 = document.getElementById("Publications");
-    let bio_tab = document.getElementById("Bio_tab");
-    let education_tab = document.getElementById("Education_tab");
-    let publications_tab = document.getElementById("Publications_tab")
-
-    if(tab === "Bio"){
-        bio_tab.style.display = "block";
-        education_tab.style.display = "none";
-        publications_tab.style.display="none";
-
-        tablink1.style.color = "white";
-        tablink1.style.textShadow = "0px 0px 5px #ced0d3";
-        tablink2.style.color = "rgba(226, 226, 226, 0.8)";
-        tablink2.style.textShadow = "none";
-        tablink3.style.color = "rgba(226, 226, 226, 0.8)";
-        tablink3.style.textShadow = "none";
-    }
-    else if(tab === "Education"){
-        education_tab.style.display="block";
-        bio_tab.style.display="none";
-        publications_tab.style.display="none";
-
-        tablink2.style.color = "white";
-        tablink2.style.textShadow = "0px 0px 5px #ced0d3";
-        tablink1.style.color = "rgba(226, 226, 226, 0.8)";
-        tablink1.style.textShadow = "none";
-        tablink3.style.color = "rgba(226, 226, 226, 0.8)";
-        tablink3.style.textShadow = "none";
-    }
-    else if(tab === "Publications"){
-        publications_tab.style.display="block";
-        bio_tab.style.display="none";
-        education_tab.style.display="none";
-
-        tablink3.style.color = "white";
-        tablink3.style.textShadow = "0px 0px 5px #ced0d3";
-        tablink1.style.color = "rgba(226, 226, 226, 0.8)";
-        tablink1.style.textShadow = "none";
-        tablink2.style.color = "rgba(226, 226, 226, 0.8)";
-        tablink2.style.textShadow = "none";
-    }
-}
-
-function copy_mail(){
-    document.getElementById("mail_text").select();
-    document.execCommand("copy");
-    alert("Mail copied successfully.")
-    console.log("copied!");
-}
+      window.setTimeout(() => {
+        copyStatus.textContent = '';
+      }, 1500);
+    });
+  }
+});
