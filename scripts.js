@@ -1,88 +1,196 @@
-window.addEventListener('load',function(){
+window.addEventListener('DOMContentLoaded', () => {
+  const navLinks = Array.from(document.querySelectorAll('.main-nav a[href^="#"]'));
+  const sections = navLinks
+    .map((link) => {
+      const id = link.getAttribute('href')?.slice(1);
+      return id ? document.getElementById(id) : null;
+    })
+    .filter(Boolean);
 
-    let tab1 = document.getElementById("Bio");
-    let tab2 = document.getElementById("Education");
-    let tab3 = document.getElementById("Publications");
+  const setActiveLink = (id) => {
+    navLinks.forEach((link) => {
+      link.classList.toggle('is-active', link.getAttribute('href') === `#${id}`);
+    });
+  };
 
-    let url = window.location.hash;
+  let lockActiveToId = null;
+  let userInitiatedScrollPending = false;
 
-    if(url === "#Bio"){
-        showContent("Bio");
-    }else if(url === "#Education"){
-        showContent("Education");
-    }else if(url === "#Publications"){
-        showContent("Publications");
-    }else{
-        showContent("Bio");
+  const lockActiveLinkUntilUserScrolls = (id) => {
+    lockActiveToId = id;
+    setActiveLink(id);
+  };
+
+  const updateActiveFromScroll = () => {
+    if (!sections.length) {
+      return;
     }
 
-    tab1.addEventListener('focus', () => showContent("Bio"));
-
-    tab2.addEventListener('focus', () => showContent("Education"));
-
-    tab3.addEventListener('focus', () => showContent("Publications"));
-
-    tab1.addEventListener('click', () => showContent("Bio"));
-    
-    tab2.addEventListener('click', () => showContent("Education"));
-
-    tab3.addEventListener('click', () => showContent("Publications"));
-
-    document.getElementById("mail_icon").addEventListener('click', () => copy_mail());
-
-    document.getElementById("mail_text").addEventListener('click', () => copy_mail());
-
-})
-
-function showContent(tab){
-    let tablink1 = document.getElementById("Bio");
-    let tablink2 = document.getElementById("Education");
-    let tablink3 = document.getElementById("Publications");
-    let bio_tab = document.getElementById("Bio_tab");
-    let education_tab = document.getElementById("Education_tab");
-    let publications_tab = document.getElementById("Publications_tab")
-
-    if(tab === "Bio"){
-        bio_tab.style.display = "block";
-        education_tab.style.display = "none";
-        publications_tab.style.display="none";
-
-        tablink1.style.color = "white";
-        tablink1.style.textShadow = "0px 0px 5px #ced0d3";
-        tablink2.style.color = "rgba(226, 226, 226, 0.8)";
-        tablink2.style.textShadow = "none";
-        tablink3.style.color = "rgba(226, 226, 226, 0.8)";
-        tablink3.style.textShadow = "none";
+    if (lockActiveToId) {
+      setActiveLink(lockActiveToId);
+      return;
     }
-    else if(tab === "Education"){
-        education_tab.style.display="block";
-        bio_tab.style.display="none";
-        publications_tab.style.display="none";
 
-        tablink2.style.color = "white";
-        tablink2.style.textShadow = "0px 0px 5px #ced0d3";
-        tablink1.style.color = "rgba(226, 226, 226, 0.8)";
-        tablink1.style.textShadow = "none";
-        tablink3.style.color = "rgba(226, 226, 226, 0.8)";
-        tablink3.style.textShadow = "none";
+    const anchorY = 140;
+    let activeSection = sections[0];
+    let bestDistance = Number.POSITIVE_INFINITY;
+
+    sections.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      // Consider sections that are not fully above the anchor line.
+      if (rect.bottom > anchorY) {
+        const distance = Math.abs(rect.top - anchorY);
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          activeSection = section;
+        }
+      }
+    });
+
+    if (activeSection?.id) {
+      setActiveLink(activeSection.id);
     }
-    else if(tab === "Publications"){
-        publications_tab.style.display="block";
-        bio_tab.style.display="none";
-        education_tab.style.display="none";
+  };
 
-        tablink3.style.color = "white";
-        tablink3.style.textShadow = "0px 0px 5px #ced0d3";
-        tablink1.style.color = "rgba(226, 226, 226, 0.8)";
-        tablink1.style.textShadow = "none";
-        tablink2.style.color = "rgba(226, 226, 226, 0.8)";
-        tablink2.style.textShadow = "none";
+  navLinks.forEach((link) => {
+    link.addEventListener('click', (event) => {
+      const href = link.getAttribute('href');
+      if (!href || !href.startsWith('#')) {
+        return;
+      }
+
+      if (href === '#about') {
+        event.preventDefault();
+        lockActiveLinkUntilUserScrolls('about');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        history.replaceState(null, '', href);
+        return;
+      }
+
+      const target = document.querySelector(href);
+      if (!target) {
+        return;
+      }
+
+      event.preventDefault();
+      lockActiveLinkUntilUserScrolls(target.id);
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      history.replaceState(null, '', href);
+    });
+  });
+
+  window.addEventListener(
+    'wheel',
+    () => {
+      userInitiatedScrollPending = true;
+    },
+    { passive: true }
+  );
+
+  window.addEventListener(
+    'touchmove',
+    () => {
+      userInitiatedScrollPending = true;
+    },
+    { passive: true }
+  );
+
+  window.addEventListener('keydown', (event) => {
+    if (['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End', ' '].includes(event.key)) {
+      userInitiatedScrollPending = true;
     }
-}
+  });
 
-function copy_mail(){
-    document.getElementById("mail_text").select();
-    document.execCommand("copy");
-    alert("Mail copied successfully.")
-    console.log("copied!");
-}
+  window.addEventListener(
+    'scroll',
+    () => {
+      if (lockActiveToId && userInitiatedScrollPending) {
+        lockActiveToId = null;
+        userInitiatedScrollPending = false;
+      }
+      updateActiveFromScroll();
+    },
+    { passive: true }
+  );
+  updateActiveFromScroll();
+
+  const copyButton = document.getElementById('copy-email');
+  const copyStatus = document.getElementById('copy-status');
+
+  if (copyButton && copyStatus) {
+    const buttonText = copyButton.querySelector('span');
+    const defaultLabel = buttonText ? buttonText.textContent : 'Copy email';
+    let resetTimerId = null;
+
+    const setCopyFeedback = (state) => {
+      copyButton.classList.remove('is-success', 'is-error', 'is-working');
+
+      if (state === 'success') {
+        copyButton.classList.add('is-success');
+        if (buttonText) {
+          buttonText.textContent = 'Copied';
+        }
+        copyStatus.textContent = 'Email copied to clipboard.';
+      } else if (state === 'working') {
+        copyButton.classList.add('is-working');
+        if (buttonText) {
+          buttonText.textContent = 'Copying...';
+        }
+        copyStatus.textContent = 'Copying email...';
+      } else if (state === 'error') {
+        copyButton.classList.add('is-error');
+        if (buttonText) {
+          buttonText.textContent = 'Try again';
+        }
+        copyStatus.textContent = 'Could not copy email. Please try again.';
+      } else {
+        if (buttonText) {
+          buttonText.textContent = defaultLabel || 'Copy email';
+        }
+        copyStatus.textContent = '';
+      }
+    };
+
+    copyButton.addEventListener('click', async () => {
+      const email = copyButton.getAttribute('data-email') || 'george@gsiachamis.dev';
+      if (!email) {
+        return;
+      }
+
+      setCopyFeedback('working');
+
+      try {
+        await navigator.clipboard.writeText(email);
+        setCopyFeedback('success');
+      } catch (_error) {
+        // Fallback for older browsers.
+        let copied = false;
+        try {
+          const hiddenInput = document.createElement('input');
+          hiddenInput.value = email;
+          document.body.appendChild(hiddenInput);
+          hiddenInput.select();
+          copied = document.execCommand('copy');
+          document.body.removeChild(hiddenInput);
+        } catch (_fallbackError) {
+          copied = false;
+        }
+
+        if (copied) {
+          setCopyFeedback('success');
+        } else {
+          setCopyFeedback('error');
+        }
+      }
+
+      if (resetTimerId) {
+        window.clearTimeout(resetTimerId);
+      }
+
+      resetTimerId = window.setTimeout(() => {
+        setCopyFeedback('idle');
+        resetTimerId = null;
+      }, 2600);
+    });
+  }
+});

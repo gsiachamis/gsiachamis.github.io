@@ -1,214 +1,312 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
   <head>
-      <title> George Siachamis </title>
-      <meta author="Nikos Siachamis">
-      <meta description="self-introductive site">
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="./styles.css">
-      <link rel="shortcut icon" href="./images/favicon_new.ico" alt="favicon" type="image/x-icon"/>
-      <script src="./scripts.js"></script>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-      <meta name="google-site-verification" content="ijoTqf7G2u0Jpk1POsu3rJrnWvzKVHGadN5acHNbcCc" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>George Siachamis | Data Systems Engineer</title>
+    <meta
+      name="description"
+      content="Data Systems Engineer profile of George Siachamis: backend, data management, distributed systems, projects, and selected publications."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="shortcut icon" href="./images/favicon_new.ico" type="image/x-icon" />
+    <script src="./scripts.js" defer></script>
   </head>
 
   <body>
+    <div class="bg-layer"></div>
 
-    <main>
-
-      <div class="main_background">
-
-        <div class="main_area">
-
-          <div class="fadeOutTop"></div>
-
-          <header class="header">
-
-            <img class="profile_image" src="./images/profile_circle.png" alt="profile image"/>
-            <h1 class="title"> George Siachamis </h1>
-            
-            <nav class="main_nav">
-              <ul class="nav_list">
-                <li>
-                  <a id="Bio" href="#Bio" class="tablinks">Bio</a>
-                </li>
-                <li>
-                  <a id="Education" href="#Education" class="tablinks">Education</a>
-                </li>
-                <li>
-                  <a id="Publications" href="#Publications" class="tablinks">Publications</a>
-                </li>
-                <li>
-                  <a id="CV" href="./docs/gsiachamis_CV_180125.pdf" class="tablinks">CV</a>
-                </li>
-              </ul>
-            </nav>
-    
-          </header>
-    
-          <div class="flexbox">
-    
-            <div class="contact">
-              <a id="linkedin" class="contact_links" href="https://www.linkedin.com/in/georgios-siachamis-76415796/" target="_blank"><img src="./images/clipart1156929.png" alt="linkedIn_icon" width="35" height="auto"></a>
-              <a id="github" class="contact_links" href="https://github.com/jorgeSia" target="_blank"><img src="./images/52-520535_free-files-github-github-icon-png-white.png" alt="github_icon" width="35" height="auto"></a>            
-              <a id="scholar" class="contact_links" href="https://scholar.google.gr/citations?user=NUGmmfIAAAAJ&hl=en" target="_blank"><img src="./images/googlescholar-svgrepo-com.png" alt="google_scholar_icon" width="35" height="auto"></a>            
-              <a id="mail" class="contact_links"><img id="mail_icon" src="./images/PngItem_5238950.png" alt="mail_icon" width="35" height="auto">
-                  <div><input class="tooltiptext" type="text" value="georgedrfsia@gmail.com" id="mail_text" readonly></div>
-              </a>
-            </div>
-
-            <section class="content" id="Bio_tab">
-                <p class="content_text">I am currently a Postdoctoral Researcher at the <a href="https://team.inria.fr/cedar/">CEDAR</a> 
-                  team of <a href="https://www.inria.fr/fr/centre-inria-de-saclay">INRIA Saclay</a> in France,  
-                  working with <a href="https://pages.saclay.inria.fr/ioana.manolescu/">Ioana Manolescu</a>.   
-                  I received my PhD from <a href="https://www.tudelft.nl/">Delft University of Technology</a>, supervised by <a href="https://asterios.katsifodimos.com/">Asterios Katsifodimos</a>. While at TU Delft, I was part of the <a href="https://www.wis.ewi.tudelft.nl/">Web Information Systems</a> 
-                  group and the <a href="https://se.ewi.tudelft.nl/ai4fintech/">AI for Fintech Research</a>, a collaboration between TU Delft and ING. My doctoral research 
-                  focused on <i>adaptivity for streaming dataflow engines</i>. Before pursuing a PhD, I did a research internship at CY Cergy Paris University under the supervision of <a href="https://perso-etis.ensea.fr/tzompanaki/">Katerina Tzompanaki</a>.
-                  Prior to that, I obtained my 5-year Diploma in Electrical and Computer Engineering from National Technical University of Athens.
-                  <br><br>
-                  My postodoctoral research focuses on ontology-based data integration and graph data lakes. Moreover, my research interests include stream processing, distributed systems and transactional workflows.
-                </p>
-            </section>
-    
-            <section class="content" id="Education_tab">
-              <ul>
-                <li><p class="content_text"><b>PhD Candidate</b>, Web Information Systems Group, Department of Software Technology, <br>
-                  Faculty of Electrical Engineering, Mathematics and Computer Science, TU Delft</p></li>
-                <li><p class="content_text"><b>Integrated Master of Engineering (M.Eng)</b>, Faculty of Electrical and Computer Engineering,<br>
-                  National Technical University of Athens (NTUA)</p></li>
-              </ul>
-            </section>
-
-            <section class="content" id="Publications_tab">
-                  <ul class="sessions">
-                    <li class="pub_item">
-                      <div class="pub_name">Evaluating Stream Processing Autoscalers</div>
-                      <p class="pub_desc"><b>George Siachamis</b>, George Christodoulou, Kyriakos Psarakis, Marios Fragkoulis, Arie van Deursen, Asterios Katsifodimos<br>
-                        <i>In the Proceedings of the 18th International Conference in Distributed and Event-based Systems (DEBS) 2024.</i>
-                        <a href="./docs/gsiachamis_autoscalers_debs_2024.pdf">[Preprint]</a>
-                      </p>
-                    </li>
-                    <li class="pub_item">
-                      <div class="pub_name">CheckMate: Evaluating Checkpointing Protocols for Streaming Dataflows</div>
-                      <p class="pub_desc"><b>George Siachamis</b>, Kyriakos Psarakis, Marios Fragkoulis, Arie van Deursen, Paris Carbone, Asterios Katsifodimos<br>
-                        <i>In the Proceedings of the 40th International Conference in Data Engineering (ICDE) 2024.</i>
-                        <a href="./docs/gsiachamis_CheckMate_ICDE_2024.pdf">[Preprint]</a>
-                      </p>
-                    </li>
-                    <li class="pub_item">
-                      <div class="pub_name">Adaptive Distirbuted Streaming Similarity Joins</div>
-                      <p class="pub_desc"><b>George Siachamis</b>, Kyriakos Psarakis, Marios Fragkoulis, Odysseas Papapetrou, Arie van Deursen, Asterios Katsifodimos<br>
-                        <i>In the Proceedings of the 17th International Conference in Distributed and Event-based Systems (DEBS) 2023.</i>
-                        <a href="https://dl-acm-org.tudelft.idm.oclc.org/doi/10.1145/3583678.3596891">[Link]</a>
-                      </p>
-                    </li>
-                    <li class="pub_item">
-                      <div class="pub_name">Towards Evaluating Stream Processing Autoscalers</div>
-                      <p class="pub_desc"><b>George Siachamis</b>, Job Kanis, Wybe Koper, Kyriakos Psarakis, Marios Fragkoulis, Arie van Deursen, Asterios Katsifodimos<br>
-                        <i>In the Self-Managing Database System (SMDB) Workshop of the 2023 IEEE International Conference on Data Engineering (ICDE).</i>
-                      </p>
-                    </li>
-                    <li class="pub_item">
-                      <div class="pub_name">Valentine: Evaluating matching techniques for dataset discovery</div>
-                      <p class="pub_desc">Christos Koutras, <b>George Siachamis</b>, Andra Ionescu, Kyriakos Psarakis, Jerry Brons,<br> 
-                        Marios Fragkoulis, Christoph Lofi, Angela Bonifati, Asterios Katsifodimos<br>
-                        <i>In the Proceedings of the 2021 IEEE International Conference on Data Engineering (ICDE).</i>
-                      </p>
-                    </li>
-                    <li class="pub_item">
-                      <div class="pub_name">Valentine in action: matching tabular data at scale</div>
-                      <p class="pub_desc">Christos Koutras & Kyriakos Psarakis , <b>George Siachamis</b>, Andra Ionescu,<br>
-                         Marios Fragkoulis, Angela Bonifati, Asterios Katsifodimos.<br>
-                        <i>In the Proceedings of the 47th International Conference on Very Large Data Bases (VLDB) 2021 (Demo track).</i>
-                        </p>
-                    </li>
-                    <li class="pub_item">
-                      <div class="pub_name">Integrating Massive Data Streams</div>
-                      <p class="pub_desc"><b>George Siachamis</b><br>
-                        <i>In Proceedings of the VLDB 2021 PhD Workshop, August 16th, 2021.</i>
-                      </p>
-                    </li>
-                  </ul>
-            </section>
-    
-          </div>
-
-          <div class="fadeOutBot"></div>
-          
-        </div>
-
-        <div id="news">
-
-          <article class="news">
-  
-            <h3> News </h3>
-    
-            <div id="newsCarousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="10000" data-pause="hover">
-              <!-- Indicators -->
-              <ol class="carousel-indicators">
-                <li data-target="#newsCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#newsCarousel" data-slide-to="1"></li>
-                <li data-target="#newsCarousel" data-slide-to="2"></li>
-              </ol>
-          
-              <!-- Wrapper for slides -->
-              <div class="carousel-inner">
-                <div class="item active">
-                    <h4> <b>DEBS 2024</b> </h4>
-                    <p>
-                      Our paper "Evaluating Stream Processing Autoscalers" is accepted at the 18th International Conference in Distributed and Event-based Systems (DEBS 2024). 
-                      Join the presentation on the Benchmarking session on the 26th of June in Lyon.
-                    </p>
-                </div>
-          
-                <div class="item">
-                    <h4> <b>ICDE 2024</b> </h4>
-                    <p>
-                      We presented our paper "CheckMate: Evaluating Checkpointing Protocols for Streaming Dataflows" at ICDE 2024 in Utrecht, Netherlands. 
-                      You can find a preprint of the paper in the <a href="https://arxiv.org/abs/2403.13629">arXiv</a>.
-                    </p>
-                </div>
-              
-                <div class="item">
-                    <h4> <b>Valentine as a python library</b> </h4>
-                    <p>
-                      We have created a python library with the algorithms included in Valentine. Have access to the state-of-the-art algorithms for Schema Matching and Dataset Discovery, 
-                      by simply running 'pip install valentine'.
-                    </p>
-                </div>
-              </div>
-          
-              <!-- Left and right controls -->
-              <a class="left carousel-control" href="#newsCarousel" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-                <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="right carousel-control" href="#newsCarousel" role="button" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-                <span class="sr-only">Next</span>
-              </a>
-            </div>
-    
-          </article>  
-
-        </div>
-
+    <header class="site-header" id="top">
+      <div class="header-inner">
+        <span class="brand">Curious mind, pragmatic builder</span>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#publications">Selected Publications</a>
+          <a href="#contact">Contact</a>
+        </nav>
       </div>
-      
+    </header>
+
+    <main class="layout">
+      <section class="hero card" id="about">
+        <div class="hero-side">
+          <img class="profile-image" src="./images/profile_circle.png" alt="George Siachamis profile photo" />
+          <ul class="social-list" aria-label="Social links">
+            <li>
+              <a href="https://github.com/jorgeSia" target="_blank" rel="noopener">
+                <img class="social-icon" src="./images/52-520535_free-files-github-github-icon-png-white.png" alt="" aria-hidden="true" />
+                <span>GitHub</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/george-siachamis-76415796" target="_blank" rel="noopener">
+                <img class="social-icon social-icon-linkedin" src="./images/clipart1156929.png" alt="" aria-hidden="true" />
+                <span>LinkedIn</span>
+              </a>
+            </li>
+            <li>
+              <a href="https://scholar.google.gr/citations?user=NUGmmfIAAAAJ&hl=en" target="_blank" rel="noopener">
+                <img class="social-icon" src="./images/googlescholar-svgrepo-com.png" alt="" aria-hidden="true" />
+                <span>Google Scholar</span>
+              </a>
+            </li>
+            <li>
+              <button id="copy-email" type="button" data-email="george@gsiachamis.dev">
+                <img class="social-icon" src="./images/PngItem_5238950.png" alt="" aria-hidden="true" />
+                <span>Copy email</span>
+              </button>
+            </li>
+          </ul>
+          <p id="copy-status" class="copy-status" aria-live="polite"></p>
+        </div>
+        <div class="hero-content">
+          <p class="eyebrow">Paris, Ile-de-France region</p>
+          <h1>George Siachamis</h1>
+          <h2>Data Systems Engineer | Postdoctoral Researcher at Inria</h2>
+          <p class="summary">
+            Building scalable data systems across stream processing, graph data management, data integration,
+            and transactional workflows.
+          </p>
+          <p class="bio">
+            I am currently a Postdoctoral Researcher at
+            <a href="https://www.inria.fr/" target="_blank" rel="noopener">Inria</a>,
+            in the <a href="https://team.inria.fr/cedar/" target="_blank" rel="noopener">CEDAR team</a>
+            (October 2024 - Present), working with
+            <a href="https://pages.saclay.inria.fr/ioana.manolescu/" target="_blank" rel="noopener">Ioana Manolescu</a>.
+            I received my PhD from
+            <a href="https://www.tudelft.nl/" target="_blank" rel="noopener">Delft University of Technology</a>,
+            with thesis title
+            <a
+              href="https://research.tudelft.nl/en/publications/adaptivity-for-streaming-dataflow-engines"
+              target="_blank"
+              rel="noopener"
+              >Adaptivity for Streaming Dataflow Engines</a
+            >,
+            supervised by
+            <a href="https://asterios.katsifodimos.com/" target="_blank" rel="noopener">Asterios Katsifodimos</a>.
+            At TU Delft, I was part of the
+            <a href="https://www.wis.ewi.tudelft.nl/" target="_blank" rel="noopener">Web Information Systems group</a>
+            and
+            <a href="https://se.ewi.tudelft.nl/ai4fintech/" target="_blank" rel="noopener">AI for Fintech Research</a>.
+            Before my PhD, I completed a research internship at
+            <a href="https://www.cyu.fr/" target="_blank" rel="noopener">CY Cergy Paris University</a>.
+            I hold an Integrated M.Eng. in Electrical and Computer Engineering from
+            <a href="https://www.ntua.gr/en/" target="_blank" rel="noopener"
+              >National Technical University of Athens (NTUA)</a
+            >.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="./docs/gsiachamis_CV_24032026.pdf" target="_blank" rel="noopener">Download CV</a>
+            <a class="btn btn-secondary" href="#projects">View Projects</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="card" id="skills">
+        <h3>Core Skills</h3>
+        <p class="skill-legend">
+          <span class="legend-item"><span class="legend-dot expert"></span>Expert</span>
+          <span class="legend-item"><span class="legend-dot proficient"></span>Proficient</span>
+          <span class="legend-item"><span class="legend-dot familiar"></span>Familiar</span>
+        </p>
+        <div class="skill-grid">
+          <span class="chip skill-expert">Java</span>
+          <span class="chip skill-expert">Python</span>
+          <span class="chip skill-proficient">SQL</span>
+          <span class="chip skill-proficient">Kafka</span>
+          <span class="chip skill-proficient">Apache Flink</span>
+          <span class="chip skill-proficient">Docker</span>
+          <span class="chip skill-proficient">Kubernetes</span>
+          <span class="chip skill-proficient">Git</span>
+          <span class="chip skill-familiar">Apache Spark</span>
+          <span class="chip skill-familiar">Rust</span>
+          <span class="chip skill-familiar">Go</span>
+          <span class="chip skill-familiar">C/C++</span>
+        </div>
+      </section>
+
+      <section class="card" id="experience">
+        <h3>Experience</h3>
+        <div class="timeline">
+          <article>
+            <h4>Postdoctoral Researcher, Inria CEDAR team</h4>
+            <p class="meta">October 2024 - Present | Saclay, France</p>
+            <p>
+              Researching ontology-based data integration and graph data management with emphasis on efficient,
+              reliable data workflows and query processing.
+            </p>
+            <p>
+              Participating as Research Engineer in the
+              <a
+                href="https://www.inria.fr/en/data-management-amadeus-inria-exploring-decentralisation"
+                target="_blank"
+                rel="noopener"
+                >Data Exchange Platform (DXP) project</a
+              >
+              between Inria and Amadeus, where I focus on access control for RDF and OBDA systems.
+            </p>
+          </article>
+          <article>
+            <h4>Academic Consultant, ING Group (Global Analytics and Tech Infra)</h4>
+            <p class="meta">January 2020 - December 2023 | Amsterdam, Netherlands</p>
+            <p>
+              Member of the AI for FinTech Research collaboration between ING and TU Delft, bridging academic
+              research and industry through technical exchanges and internal seminars.
+            </p>
+          </article>
+          <article>
+            <h4>PhD Candidate, TU Delft (Web Information Systems)</h4>
+            <p class="meta">November 2019 - April 2024 | Delft, Netherlands</p>
+            <p>Contributed to research projects in data management and distributed systems.</p>
+            <p>
+              Thesis:
+              <a
+                href="https://research.tudelft.nl/en/publications/adaptivity-for-streaming-dataflow-engines"
+                target="_blank"
+                rel="noopener"
+                >Adaptivity for Streaming Dataflow Engines</a
+              >.
+            </p>
+          </article>
+          <article>
+            <h4>Research Intern, Universite de Cergy-Paris</h4>
+            <p class="meta">April 2019 - June 2019 | Paris, France</p>
+            <p>
+              Worked on multiversion dataset querying and extended the OrpheusDB codebase with the
+              implementation of all proposed strategies and an extended experimental evaluation.
+            </p>
+          </article>
+          <article>
+            <h4>Software Engineer, FOCUS ON DIGITAL SERVICES LTD.</h4>
+            <p class="meta">January 2015 - February 2016 | Athens, Greece</p>
+            <p>Worked on software development and digital data processing.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="card" id="projects">
+        <h3>Projects</h3>
+        <div class="project-grid">
+          <article class="project">
+            <h4>
+              <a href="https://github.com/delftdata/valentine" target="_blank" rel="noopener"
+                >Valentine: (Schema-) Matching DataFrames Made Easy</a
+              >
+            </h4>
+            <p>
+              Built a Python package for capturing potential relationships among columns of different tabular
+              datasets represented as pandas DataFrames.
+            </p>
+            <p class="impact">Impact: Used by many researchers in data integration and adopted by companies.</p>
+          </article>
+          <article class="project">
+            <h4>
+              <a href="https://gitlab.inria.fr/cedar/dxp-public" target="_blank" rel="noopener"
+                >Extracting Ontologies out of JSON Schema Specifications</a
+              >
+            </h4>
+            <p>
+              Built a Python toolkit that transforms JSON Schema specifications into an RDFS ontology, reports
+              ontology statistics, and generates synthetic airline-sector datasets, using sentence embeddings
+              (SBERT), hierarchical clustering, and LLMs.
+            </p>
+            <p class="impact">
+              Impact: Delivered a practical ontology-engineering pipeline for the Inria-Amadeus Data Exchange
+              Platform (DXP) project.
+            </p>
+          </article>
+          <article class="project">
+            <h4>
+              <a href="https://github.com/jorgeSia/my-hecto-rust" target="_blank" rel="noopener"
+                >Rust Text Editor</a
+              >
+            </h4>
+            <p>
+              A Rust project focused on building a lightweight text editor, exploring low-level systems concepts,
+              terminal interaction, and idiomatic Rust design patterns.
+            </p>
+            <p class="impact">Impact: Hands-on growth in systems programming and Rust engineering practices.</p>
+          </article>
+          <article class="project">
+            <h4>Self-hosted Homelab</h4>
+            <p>
+              Built a fully functional home server on reused hardware with Docker-based deployments, strong
+              observability, and maintainable operations.
+            </p>
+            <p>
+              Deployed services include on-prem cloud storage, media servers, and productivity tooling.
+            </p>
+            <p class="impact">Impact: Continuous experimentation and hands-on improvement in real-world operations.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="card" id="publications">
+        <h3>Selected Publications</h3>
+        <ul class="pub-list">
+          <li>
+            <p>
+              <strong>CheckMate: Evaluating Checkpointing Protocols for Streaming Dataflows</strong> (ICDE 2024)
+              <a href="./docs/gsiachamis_CheckMate_ICDE_2024.pdf" target="_blank" rel="noopener">PDF</a>
+              <a href="https://dblp.org/rec/conf/icde/SiachamisPFDCK24" target="_blank" rel="noopener">DBLP</a>
+              <a href="https://github.com/delftdata/checkmate" target="_blank" rel="noopener">CODE</a>
+            </p>
+          </li>
+          <li>
+            <p>
+              <strong>Styx: Transactional Stateful Functions on Streaming Dataflows</strong> (SIGMOD 2025)
+              <a href="https://dblp.org/rec/journals/pacmmod/PsarakisCSFK25" target="_blank" rel="noopener">DBLP</a>
+              <a href="https://github.com/delftdata/styx" target="_blank" rel="noopener">CODE</a>
+            </p>
+          </li>
+          <li>
+            <p>
+              <strong>Valentine: Evaluating Matching Techniques for Dataset Discovery</strong> (ICDE 2021)
+              <a href="https://dblp.org/rec/conf/icde/KoutrasSIPBFLBK21" target="_blank" rel="noopener">DBLP</a>
+              <a href="https://github.com/delftdata/valentine" target="_blank" rel="noopener">CODE</a>
+            </p>
+          </li>
+          <li>
+            <p>
+              <strong>Evaluating Stream Processing Autoscalers</strong> (DEBS 2024)
+              <a href="./docs/gsiachamis_autoscalers_debs_2024.pdf" target="_blank" rel="noopener">PDF</a>
+              <a href="https://dblp.org/rec/conf/debs/Siachamis0PFDK24" target="_blank" rel="noopener">DBLP</a>
+              <a href="https://github.com/delftdata/espa-autoscaling" target="_blank" rel="noopener">CODE</a> 
+            </p>
+          </li>
+          <li>
+            <p>
+              <strong>RDF Query Answering in the Presence of Access Restrictions</strong> (CoopIS 2025)
+              <span class="award-badge" aria-label="Best Paper Award">&#x1F3C6; Best Paper Award</span>
+              <a href="https://dblp.org/rec/conf/coopis/BuronKMS25" target="_blank" rel="noopener">DBLP</a>
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="card" id="contact">
+        <h3>Contact</h3>
+        <p>
+          Best way to reach me is by email:
+          <a href="mailto:george@gsiachamis.dev">george@gsiachamis.dev</a>
+        </p>
+        <p>
+          You can also connect via
+          <a href="https://www.linkedin.com/in/georgios-siachamis-76415796/" target="_blank" rel="noopener">LinkedIn</a>
+          or browse my code on
+          <a href="https://github.com/jorgeSia" target="_blank" rel="noopener">GitHub</a>.
+        </p>
+      </section>
     </main>
 
-    <footer class="main_footer">
-      © Copyright 2023 
-      <a class="reference" href="https://itsnek.github.io/" target="_blank"> Nikos Siachamis </a>
-      . Hosted by
-      <a class="reference" href="https://pages.github.com/" target="_blank"> GitHub Pages </a>
+    <footer class="site-footer">
+      <p>
+        Hosted on
+        <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>
+      </p>
     </footer>
-
   </body>
-
 </html>

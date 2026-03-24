@@ -1,0 +1,12 @@
+[workspace]
+authors = ["Georgios SIACHAMIS <georgios.siachamis@inria.fr>"]
+channels = ["conda-forge"]
+name = "gsiachamis.github.io"
+platforms = ["osx-arm64"]
+version = "0.1.0"
+
+[tasks]
+preview = "python -m http.server 8000 --bind 127.0.0.1"
+
+[dependencies]
+python = ">=3.14.3,<3.15"
