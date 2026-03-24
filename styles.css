@@ -370,18 +370,22 @@ h3 {
   width: 10px;
   height: 10px;
   border-radius: 50%;
+  border: 1px solid transparent;
 }
 
 .legend-dot.expert {
-  background: #1ecf8f;
+  background: rgba(16, 49, 43, 0.75);
+  border-color: rgba(30, 207, 143, 0.45);
 }
 
 .legend-dot.proficient {
-  background: #66bef8;
+  background: rgba(88, 72, 27, 0.84);
+  border-color: rgba(226, 193, 110, 0.5);
 }
 
 .legend-dot.familiar {
-  background: #f2b97d;
+  background: rgba(54, 37, 24, 0.8);
+  border-color: rgba(242, 185, 125, 0.45);
 }
 
 .chip {
@@ -400,9 +404,9 @@ h3 {
 }
 
 .chip.skill-proficient {
-  border-color: rgba(102, 190, 248, 0.45);
-  background: rgba(17, 45, 63, 0.8);
-  color: #d8efff;
+  border-color: rgba(226, 193, 110, 0.5);
+  background: rgba(88, 72, 27, 0.84);
+  color: #f6e7bf;
 }
 
 .chip.skill-familiar {
@@ -438,6 +442,8 @@ h3 {
   border-radius: 14px;
   background: rgba(14, 24, 37, 0.85);
   padding: 14px;
+  display: flex;
+  flex-direction: column;
 }
 
 .project h4 {
@@ -446,7 +452,8 @@ h3 {
 
 .impact {
   color: #d0f5e7;
-  margin-top: 8px;
+  margin-top: auto;
+  padding-top: 10px;
 }
 
 .pub-list {

@@ -152,7 +152,7 @@ window.addEventListener('DOMContentLoaded', () => {
     };
 
     copyButton.addEventListener('click', async () => {
-      const email = copyButton.getAttribute('data-email') || 'georgedrfsia@gmail.com';
+      const email = copyButton.getAttribute('data-email') || 'george@gsiachamis.dev';
       if (!email) {
         return;
       }
