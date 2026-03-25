@@ -425,6 +425,20 @@ h3 {
   padding-left: 14px;
 }
 
+.experience-bullets {
+  margin-top: 8px;
+  padding-left: 18px;
+  color: #d7e8ff;
+}
+
+.experience-bullets li {
+  margin-bottom: 6px;
+}
+
+.experience-bullets li:last-child {
+  margin-bottom: 0;
+}
+
 .meta {
   color: var(--muted);
   font-size: 0.95rem;
